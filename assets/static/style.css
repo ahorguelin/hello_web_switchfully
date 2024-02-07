@@ -1,7 +1,8 @@
-:root{
+:root {
     --bg: #2b2b2b;
     --fg: #e6e1dc;
-    --slate: #5a647e;
+    --slate: #333a49;
+    --slate-alt: #262b37;
     --red: #da4939;
     --yellow: #ffc66d;
     --blue: #6d9cbe;
@@ -10,37 +11,176 @@
     --dgreen: #519f50;
 }
 
-*{
+/* COLORS CLASS */
+.red {
+    color: var(--red);
+}
+
+.green {
+    color: var(--lgreen);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.dgreen {
+    color: var(--dgreen);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.purple {
+    color: var(--purple);
+}
+
+/* CSS RESET */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Hack', sans-serif;
 }
 
-body{
+body {
     background-color: var(--bg);
 }
 
-.editor{
+main {
+    padding: 10px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--fg);
+    margin-top: 10px;
+}
+
+/* NAV BAR */
+nav {
+    background-color: var(--slate);
+    padding: 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.navbar-link:link {
+    color: var(--fg);
+    text-decoration: none;
+
+    transition: all 0.5s;
+}
+
+.navbar-link:visited {
+    color: var(--fg);
+    text-decoration: none;
+
+    transition: all 0.5s;
+}
+
+.navbar-link:link:active {
+    color: var(--yellow);
+}
+
+.navbar-link:visited:active {
+    color: var(--yellow);
+}
+
+.navbar-link:link:hover {
+    text-decoration: underline;
+
+    transition: all 0.5s;
+}
+
+.navbar-link:visited:hover {
+    text-decoration: underline;
+
+    transition: all 0.5s;
+}
+
+
+/* CODE EDITOR CARD STYLING */
+
+.editor {
     background-color: var(--slate);
     max-width: 600px;
     margin: 2rem auto;
-    padding: 0.5rem 2rem;
+    border-radius: 10px;
+
+    transition: all 0.5s;
 }
 
-.editor-header{
-    font-family: 'Hack', sans-serif;
+.editor:hover {
+    scale: 1.02;
+    transition: all 0.5s;
+}
+
+.editor-header {
     color: var(--fg);
-    margin-bottom: 1rem;
+    background-color: var(--slate-alt);
+
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
 }
 
-.editor-header > h1{
+.editor-header>h2 {
     text-align: center;
+    font-size: 1rem;
+    margin: auto;
 }
 
-.editor-body{
-    font-family: 'Hack', sans-serif;
+.dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dots>.red {
+    background-color: var(--red);
+}
+
+.dots>.yellow {
+    background-color: var(--yellow);
+}
+
+.dots>.green {
+    background-color: var(--lgreen);
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+.editor-body {
     color: var(--fg);
+    padding: 40px;
+}
+
+.editor-body li {
+    margin: 8px 0px;
+}
+
+.tabbed {
+    margin-left: 40px;
 }
 
 
+/* CARDS  */
+.card {
+    max-width: 600px;
 
+    padding: 20px;
+}
